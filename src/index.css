@@ -1,0 +1,193 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 18% 97%;
+    --foreground: 240 30% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 30% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 30% 14%;
+
+    --primary: 262 84% 63%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 294 85% 61%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 260 18% 90%;
+    --muted-foreground: 240 10% 50%;
+
+    --accent: 199 93% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 18% 90%;
+    --input: 260 18% 90%;
+    --ring: 262 84% 63%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 30% 10%;
+    --foreground: 260 18% 97%;
+
+    --card: 240 25% 14%;
+    --card-foreground: 260 18% 97%;
+
+    --popover: 240 25% 14%;
+    --popover-foreground: 260 18% 97%;
+
+    --primary: 262 84% 63%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 294 85% 61%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 25% 20%;
+    --muted-foreground: 240 10% 70%;
+
+    --accent: 199 93% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 25% 20%;
+    --input: 240 25% 20%;
+    --ring: 262 84% 63%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Smooth scrolling for the entire app */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* All interactive elements should have transitions */
+  a, button, input, select, textarea {
+    @apply transition-all duration-200;
+  }
+}
+
+@layer components {
+  .resume-container {
+    height: calc(100vh - 8rem);
+    max-height: calc(100vh - 8rem);
+    overflow: hidden;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bottom-nav {
+    height: 4rem;
+  }
+  
+  .resume-scroll-snap {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100%;
+    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar in Firefox */
+  }
+  
+  .resume-scroll-snap::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar in Chrome, Safari, and Opera */
+  }
+  
+  .resume-scroll-item {
+    scroll-snap-align: start;
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem 0;
+  }
+  
+  /* Add smooth animations for page transitions */
+  .page-transition-enter {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .page-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .page-transition-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .page-transition-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  /* Enhanced card interactions */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  /* Responsive padding adjustments */
+  .responsive-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+
+  /* Hide scrollbars across the app while allowing scrolling */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Resume card expanded state transitions */
+  .resume-expand-transition {
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+  }
+  
+  .resume-expand-enter {
+    max-height: 0;
+    opacity: 0;
+  }
+  
+  .resume-expand-enter-active {
+    max-height: 1000px;
+    opacity: 1;
+  }
+  
+  .resume-expand-exit {
+    max-height: 1000px;
+    opacity: 1;
+  }
+  
+  .resume-expand-exit-active {
+    max-height: 0;
+    opacity: 0;
+  }
+}
