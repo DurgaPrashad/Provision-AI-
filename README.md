@@ -26,7 +26,7 @@ Our advanced resume generation service uses NLP and GPT-based models to create k
 
 ### 2. PortZen - Interactive Portfolio Builder
 PortZen offers Best experience to visually build modern, professional portfolios that showcase skills and projects effectively.
-![image](https://github.com/user-attachments/assets/88c9cc50-2c4f-4227-9f73-9ff264740bde)
+
 
 **Features:**
 
@@ -41,6 +41,10 @@ PortZen offers Best experience to visually build modern, professional portfolios
 - **Authentication:** OAuth
 
 **Status:** In development
+![image](https://github.com/user-attachments/assets/88c9cc50-2c4f-4227-9f73-9ff264740bde)
+**Note:**
+🛠️ This repository contains only the open-source code for the ATS Resume Generator. The portfolio generator (PortZen) is privately hosted on Vercel and integrated within the Provision AI Resume Generator. You can access it at:
+👉 https://portzen.vercel.app/
 
 ### 3. Real-time Resume Feedback System
 Provides instant, intelligent suggestions based on uploaded or generated resumes to maximize their effectiveness.
